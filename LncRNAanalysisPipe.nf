@@ -224,7 +224,7 @@ if (params.species=="human") {
         touch filenames.txt
         for file in *.gtf 
         do
-        perl -lpe 's/ [^"](\\S+) ;/ "$1" ;/g\' $file > ${file}_mod.gtf 
+        perl -lpe 's/ ([^"]\S+) ;/ "$1" ;/g' $file > ${file}_mod.gtf 
         echo ${file}_mod.gtf >>filenames.txt
         
         done
